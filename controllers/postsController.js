@@ -1,5 +1,6 @@
 import { connectDatabase, closeDatabase } from "../db.js";
 
+// Create post
 export const createPost = async (req, res) => {
   try {
     const database = await connectDatabase();
@@ -35,6 +36,7 @@ export const createPost = async (req, res) => {
   }
 };
 
+// Get all posts
 export const getAllPosts = async (req, res) => {
   try {
     const database = await connectDatabase();
@@ -47,20 +49,23 @@ export const getAllPosts = async (req, res) => {
   }
 };
 
+// Get posts by user
 export const getPostsByUser = async (req, res) => {
   try {
     const database = await connectDatabase();
-    const { name } = req.params;
-    const user = await database.collection("users").findOne({ name });
-    if (!user) {
+    const { user } = req.params;
+    const userRecord = await database
+      .collection("users")
+      .findOne({ name: user });
+    if (!userRecord) {
       return res.status(404).json({ error: "User not found" });
     }
     const posts = await database
       .collection("posts")
-      .find({ owner: name })
+      .find({ owner: user })
       .toArray();
     res.status(200).json(posts);
-  } catch (e) {
+  } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   } finally {
     await closeDatabase();

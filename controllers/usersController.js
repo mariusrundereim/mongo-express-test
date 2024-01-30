@@ -1,5 +1,6 @@
 import { connectDatabase, closeDatabase } from "../db.js";
 
+// Get user
 export const getUser = async (req, res) => {
   try {
     const database = await connectDatabase();
@@ -22,6 +23,7 @@ export const getUser = async (req, res) => {
   }
 };
 
+// Create user
 export const createUser = async (req, res) => {
   try {
     const database = await connectDatabase();
