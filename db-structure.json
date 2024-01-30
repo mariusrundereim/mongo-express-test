@@ -1,0 +1,51 @@
+{
+  "users": [
+    { "name": "ludvig", "id": "auto", "age": 30, "posts": [1, 2, 3, 4] }
+  ],
+  "users": [{ "name": "John", "id": "auto", "age": 30, "posts": [5, 6, 7] }],
+
+  "posts": [
+    {
+      "id": 1,
+      "title": "My first post",
+      "content": "Hello world!",
+      "author": "ludvig"
+    },
+    {
+      "id": 2,
+      "title": "My second post",
+      "content": "Hello world!",
+      "author": "ludvig"
+    },
+    {
+      "id": 3,
+      "title": "My third post",
+      "content": "Hello world!",
+      "author": "ludvig"
+    },
+    {
+      "id": 4,
+      "title": "My fourth post",
+      "content": "Hello world!",
+      "author": "ludvig"
+    },
+    {
+      "id": 5,
+      "title": "My fifth post",
+      "content": "Hello world!",
+      "author": "John"
+    },
+    {
+      "id": 6,
+      "title": "My sixth post",
+      "content": "Hello world!",
+      "author": "John"
+    },
+    {
+      "id": 7,
+      "title": "My seventh post",
+      "content": "Hello world!",
+      "author": "John"
+    }
+  ]
+}
